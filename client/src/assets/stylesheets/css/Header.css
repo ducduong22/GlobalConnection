@@ -1,0 +1,41 @@
+.setting-frame {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  overflow-y: auto; /* Enable scrolling if content exceeds frame height */
+  z-index: 998; /* Ensure the frame is below the floating button */
+}
+.setting-frame ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chatlist-frame {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: #222222;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 400px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  overflow-y: auto; /* Enable scrolling if content exceeds frame height */
+  z-index: 998; /* Ensure the frame is below the floating button */
+}
+
+.chatlist-frame img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 8px 15px 8px 0;
+  border: 3px solid #45abff;
+  cursor: pointer;
+}

@@ -1,0 +1,112 @@
+.chat-windows {
+  display: flex; /* Sắp xếp các cửa sổ chat theo hàng */
+  gap: 10px; /* Khoảng cách giữa các cửa sổ chat */
+  justify-content: flex-end; /* Đẩy các chat box về phía phải */
+  position: fixed;
+  bottom: 0;
+  right: 380px; /* Đặt chat windows sát mép phải */
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #444444; /* Màu nền tùy chọn */
+  color: white;
+  width: 300px;
+  position: relative;
+}
+
+.chat-header-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 8px 15px 8px 10px;
+}
+
+.chat-header div {
+  flex-grow: 1; /* Đảm bảo div này chiếm không gian còn lại */
+}
+
+.chat-header-close {
+  cursor: pointer;
+  margin-right: 22px; /* Đảm bảo không gian bên phải hợp lý */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid #444444;
+  padding: 5px;
+  width: 300px;
+  height: 400px;
+  background-color: #444444;
+  z-index: 999;
+}
+
+.chat-box {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+hr {
+  width: 100%;
+  height: 3px;
+  border: 0;
+  background: #cccccc;
+  margin-top: 3px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+  clear: both;
+  word-wrap: break-word;
+}
+
+.message.you {
+  background: linear-gradient(rgb(23, 234, 217) 0%, rgb(96, 120, 234) 100%);
+  float: right;
+}
+
+.message.them {
+  background-color: #666666;
+  color: white;
+  float: left;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+}
+
+.chat-input {
+  flex: 1;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  resize: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,30 @@
+.button-sign-up {
+  background: linear-gradient(rgb(66, 230, 149) 0%, rgb(59, 178, 184) 100%);
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  height: 46px;
+  width: 260px;
+  overflow: hidden;
+  padding: 0 32px;
+  text-shadow: none;
+}
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gradient-text-register {
+  background: linear-gradient(rgb(23, 234, 217) 0%, rgb(96, 120, 234) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-page-register {
+  width: 110px;
+  height: 100px;
+}

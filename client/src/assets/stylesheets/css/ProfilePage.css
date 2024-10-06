@@ -1,0 +1,529 @@
+.main_profile {
+  display: flex;
+  background: #222222;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.main_profile .Left .Avatar .backgroud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_profile .Left .Avatar .backgroud img {
+  margin: 0 auto 10px auto;
+  width: 150px;
+  height: 150px;
+}
+.main_profile .Left {
+  width: 25%;
+  height: auto;
+  overflow: hidden;
+  background: #333333;
+  padding: 10px 6px 5px 10px;
+  position: fixed;
+  left: 180px;
+  border-radius: 7px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+.main_profile .Left .backgroud {
+  background: linear-gradient(rgb(91, 36, 122) 0%, rgb(27, 206, 223) 100%);
+  width: 100%;
+  height: 80px;
+}
+.main_profile .Left .backgroud-bottom {
+  background: #333333;
+  width: 100%;
+  height: 100px;
+}
+.main_profile .Left .my_profile {
+  border-radius: 7px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 3);
+  margin: 4px;
+}
+.main_profile .Left::-webkit-scrollbar {
+  width: 7px;
+}
+
+.main_profile .Left::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #f5f5f5;
+}
+
+.main_profile .Left:hover::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+
+.main_profile .Left .Img {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.main_profile .Left .Img:hover {
+  background: #e3e3e3;
+}
+
+.main_profile .Left .Img Img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: 8px 15px 8px 0;
+}
+.main_profile .Left .Img i {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 8px 15px 8px 0;
+  padding: 7px 15px 8px 6px;
+}
+.main_profile .Left .home:hover {
+  color: #45abff;
+  cursor: pointer;
+}
+
+.main_profile .Left hr {
+  width: 100%;
+  height: 3px;
+  border: 0;
+  background: #cccccc;
+  margin: 10px 0;
+}
+
+.main_profile .Left h2 {
+  font-size: 18px;
+  color: #919191;
+  margin: 5px 0;
+}
+
+.main_profile .Left .edit {
+  color: #45abff;
+  font-size: 15px;
+  float: right;
+  position: relative;
+  bottom: 23px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.main_profile .Left:hover .edit {
+  opacity: 1;
+}
+
+.main_profile .Left .shortcuts {
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.main_profile .Left .shortcuts:hover {
+  background: #e3e3e3;
+  cursor: pointer;
+}
+
+.main_profile .Left .shortcuts Img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  margin: 8px 15px 8px 0;
+}
+
+.main_profile .center {
+  width: 50%;
+  height: auto;
+  padding: 15px 20px 10px 20px;
+  background: #333333;
+  margin-left: 38%;
+}
+
+.main_profile .center::-webkit-scrollbar {
+  width: 0;
+}
+
+.main_profile .center .top_box {
+  width: 100%;
+  height: 260px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.main_profile .center .my_post {
+  width: 100%;
+  height: auto;
+  background: #333333;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 3);
+
+  margin-bottom: 10px;
+}
+
+.main_profile .center .my_post Img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.main_profile .center .my_post .post_top {
+  display: flex;
+  align-items: center;
+}
+
+.main_profile .center .my_post .post_top input {
+  width: 90%;
+  padding: 10px;
+  margin-left: 20px;
+  border: 0;
+  outline: none;
+  background: #efefef;
+  border-radius: 30px;
+  font-size: 17px;
+}
+
+.main_profile .center .my_post .post_top input:hover {
+  background: #e3e3e3;
+  cursor: pointer;
+}
+
+.main_profile .center .my_post hr {
+  width: 100%;
+  height: 1px;
+  background: #cccccc;
+  border: 0;
+  margin: 10px 0;
+}
+
+.main_profile .center .my_post .post_bottom {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 5px auto;
+}
+
+.main_profile .center .my_post .post_bottom .post_icon {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 7px 40px;
+  cursor: pointer;
+}
+
+.main_profile .center .my_post .post_bottom .post_icon:hover {
+  background: #efefef;
+  border-radius: 8px;
+}
+
+.main_profile .center .my_post .post_bottom .post_icon i.red {
+  font-size: 23px;
+  color: red;
+  margin-right: 8px;
+}
+
+.main_profile .center .my_post .post_bottom .post_icon i.green {
+  font-size: 23px;
+  color: #27cc37;
+  margin-right: 8px;
+}
+
+.main_profile .center .my_post .post_bottom .post_icon i.yellow {
+  font-size: 23px;
+  color: #f7b928;
+  margin-right: 8px;
+}
+
+.main_profile .center .friends_post {
+  margin: 10px 0;
+  width: 100%;
+  height: auto;
+  background: #333333;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 3);
+}
+
+.main_profile .center .friends_post .friend_post_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.main_profile .center .friends_post .friend_post_top .Img_and_name {
+  display: flex;
+  align-items: center;
+}
+
+.main_profile .center .friends_post .friend_post_top .Img_and_name Img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.main
+  .center
+  .friends_post
+  .friend_post_top
+  .Img_and_name
+  .friends_name
+  .friends_name {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main
+  .center
+  .friends_post
+  .friend_post_top
+  .Img_and_name
+  .friends_name
+  .friends_name:hover {
+  text-decoration: underline;
+}
+
+.main_profile
+  .center
+  .friends_post
+  .friend_post_top
+  .Img_and_name
+  .friends_name
+  .time {
+  font-size: 14px;
+  color: #919191;
+  margin: 3px 0;
+}
+
+.main
+  .center
+  .friends_post
+  .friend_post_top
+  .Img_and_name
+  .friends_name
+  .time
+  i {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.main_profile .center .friends_post .friend_post_top .menu {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.main_profile .center .friends_post .friend_post_top .menu:hover {
+  background: #efefef;
+  cursor: pointer;
+}
+
+.main_profile .center .friends_post .friend_post_top .menu i {
+  line-height: 35px;
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+.main_profile .center .friends_post Img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.main_profile .center .friends_post .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.main_profile .center .friends_post .info .emoji_Img {
+  display: flex;
+}
+
+.main_profile .center .friends_post .info .emoji_Img Img {
+  width: 20px;
+  height: 20px;
+}
+
+.main_profile .center .friends_post .info .emoji_Img p {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #919191;
+}
+
+.main_profile .center .friends_post .info .comment {
+  display: flex;
+  align-items: center;
+}
+
+.main_profile .center .friends_post .info .comment p {
+  padding: 0 12px;
+  font-size: 15px;
+  color: #919191;
+}
+
+.main_profile .center .friends_post hr {
+  width: 100%;
+  height: 1px;
+  background: #cccccc;
+  border: 0;
+  margin: 10px 0;
+}
+
+.main_profile .center .friends_post .like {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main_profile .center .friends_post .like .like_icon {
+  display: flex;
+  align-items: center;
+}
+
+.main_profile .center .friends_post .like .like_icon i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #919191;
+}
+
+.main_profile .center .friends_post .like .like_icon i.activi {
+  color: #45abff;
+}
+
+.main_profile .center .friends_post .comment_warpper {
+  display: flex;
+  align-items: center;
+}
+
+.main_profile .center .friends_post .comment_warpper Img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 15px;
+}
+
+.main_profile .center .friends_post .comment_warpper .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #27cc37;
+  border: 2px solid #fff;
+  position: relative;
+  top: 15px;
+  right: 25px;
+}
+
+.main_profile .center .friends_post .comment_warpper .comment_search {
+  width: 95%;
+  padding: 5px 15px;
+  background: #777777;
+  border-radius: 30px;
+}
+
+.main_profile .center .friends_post .comment_warpper .comment_search input {
+  width: 85%;
+  height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.main_profile .center .friends_post .comment_warpper .comment_search i {
+  padding: 0 5px;
+  color: #919191;
+}
+
+.main_profile .center .loard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 50px 0;
+}
+
+.main_profile .center .loard button {
+  background: none;
+  padding: 5px 20px;
+  border: 1px solid #919191;
+  color: #919191;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main_profile .center .end {
+  font-size: 15px;
+  text-align: center;
+  color: #919191;
+  margin: 10px 0;
+}
+
+.main_profile .center .end span {
+  margin-left: 8px;
+  color: #45abff;
+}
+
+.main_profile .center .end span i {
+  margin-right: 8px;
+}
+
+.main_profile .btn {
+  color: white;
+  background: linear-gradient(rgb(23, 234, 217) 0%, rgb(96, 120, 234) 100%);
+}
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 999; /* Ensure the button is above other content */
+}
+.floating-button button {
+  background-color: gray;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.friends-frame {
+  position: fixed;
+  bottom: 90px;
+  right: 0;
+  background-color: rgb(21, 21, 21);
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  overflow-y: auto; /* Enable scrolling if content exceeds frame height */
+  z-index: 998; /* Ensure the frame is below the floating button */
+}
+.friends-frame ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.friends-frame ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
