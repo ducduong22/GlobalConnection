@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
-const User = require("./model/User");
-const Message = require("./model/Message");
+const User = require("./model/account");
+const Message = require("./model/message");
 
 const app = express();
 const server = http.createServer(app);
