@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { HeartFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-import { Arti, setArtificial } from "../store/menu/ArtificialSlice";
+import { Arti, setArtificial } from "../../store/menu/ArtificialSlice";
 
 const ArtificialIntelligence = () => {
   const dispatch = useDispatch();

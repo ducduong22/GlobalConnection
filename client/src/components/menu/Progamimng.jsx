@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { HeartFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-import { Pro, setProgramming } from "../store/menu/ProgrammingSlice";
+import { Pro, setProgramming } from "../../store/menu/ProgrammingSlice";
 const Programming = () => {
   const dispatch = useDispatch();
 
