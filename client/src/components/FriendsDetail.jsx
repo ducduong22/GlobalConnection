@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setUserId } from "../container/post/userIdSlice";
+import { setUserId } from "../store/post/userIdSlice";
 import Header from "./Header";
 import { HeartFilled } from "@ant-design/icons";
 import { mockComments } from "../store/mocks";
-import { setPosts } from "../container/post/postSlice";
+import { setPosts } from "../store/post/postSlice";
 const PostDetail = () => {
   const { userId } = useParams();
   const dispatch = useDispatch();

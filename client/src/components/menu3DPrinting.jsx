@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { HeartFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-import { Prin, setPrinting } from "../container/menu/ThreeDPrintingSlice";
+import { Prin, setPrinting } from "../store/menu/ThreeDPrintingSlice";
 const ThreeDPrinting = () => {
   const dispatch = useDispatch();
   const search = useSelector((state) => state.search.search);

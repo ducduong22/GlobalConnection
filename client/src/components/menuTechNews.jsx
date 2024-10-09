@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { HeartFilled } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 
-import { Technew, setTechNew } from "../container/menu/TechNewsSlice";
+import { Technew, setTechNew } from "../store/menu/TechNewsSlice";
 
 const TechNew = () => {
   const dispatch = useDispatch();

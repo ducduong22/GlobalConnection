@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { HeartFilled } from "@ant-design/icons";
 import { mockComments } from "../store/mocks";
-import { setPosts } from "../container/post/postSlice";
+import { setPosts } from "../store/post/postSlice";
 import {
   format,
   formatDistanceToNow,

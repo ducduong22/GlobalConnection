@@ -4,7 +4,7 @@ import {
   setPosts,
   addPostRequest,
   deletePostRequest,
-} from "../container/post/postSlice";
+} from "../store/post/postSlice";
 import { HeartFilled } from "@ant-design/icons";
 import "../assets/stylesheets/css/Comment.css";
 import "../assets/stylesheets/css/Modal.css";
@@ -21,7 +21,7 @@ import {
   addCommentRequest,
   deleteCommentRequest,
   setComments,
-} from "../container/comment/commentSlice";
+} from "../store/comment/commentSlice";
 const Post = () => {
   const [newPost, setNewPost] = useState({ body: "", img: "" });
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +33,6 @@ const Post = () => {
   const comments = useSelector((state) => state.comment.comments);
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
   const [selectedCommentId, setSelectedCommentId] = useState(null);
-  deletion;
 
   const deleteModalRef = useRef();
   const [newComment, setNewComment] = useState({

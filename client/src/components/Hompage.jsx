@@ -1,11 +1,11 @@
 import Header from "./Header";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setSearch } from "../container/post/postSlice";
+import { setSearch } from "../store/post/postSlice";
 import { SearchOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { setUserId } from "../container/post/userIdSlice";
-import { setGroup } from "../container/groups/groupSlice";
+import { setUserId } from "../store/post/userIdSlice";
+import { setGroup } from "../store/groups/groupSlice";
 import ThreeDPrinting from "./Menu3DPrinting";
 import Arificial from "./MenuArtificial";
 import Programming from "./MenuProgamimng";
