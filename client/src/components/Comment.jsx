@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setComments } from "../store/comment/commentSlice";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 const Comment = () => {
   const dispatch = useDispatch();
   const { id } = useParams();

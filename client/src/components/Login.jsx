@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/stylesheets/css/Login.css";
 import logo from "../assets/image/logoWeb.png";
 import { useDispatch } from "react-redux";

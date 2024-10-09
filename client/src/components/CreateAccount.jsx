@@ -1,12 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/stylesheets/css/CreateAccount.css";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registerRequest } from "../store/login/userSlice";
-import logo from "../assets/image/logoWeb.png";
 import { Link } from "react-router-dom";
+import logo from "../assets/image/logoWeb.png";
 
 const CreateAccount = () => {
   const [name, setName] = useState("");

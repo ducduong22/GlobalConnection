@@ -1,6 +1,5 @@
 import "../assets/stylesheets/css/ForgotPassword.css";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/image/logoWeb.png";
 
 export const ForgotPasswordPage = () => {

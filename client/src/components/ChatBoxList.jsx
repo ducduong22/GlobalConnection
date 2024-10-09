@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 const ChatBoxList = ({ senderId, receiverId }) => {
   const [messages, setMessages] = useState([]);
