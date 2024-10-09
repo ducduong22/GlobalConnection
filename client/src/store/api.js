@@ -38,7 +38,6 @@ export const getComments = () => {
   return axios.get(`${apiUrl.getComment}/comments`);
 };
 
-// Delete a comment by ID
 export const deleteComment = async (commentId) => {
   return axios.delete(`${apiUrl.getComment}/comments/${commentId}`);
 };
@@ -62,17 +61,11 @@ export const getProgramming = async () => {
 export const getTechNews = async () => {
   return mockTechNews;
 };
-// export const getGroup = async () => {
-//   const posts = await axios.get(apiUrl.getGroup);
-//   return posts.data;
-// };
+
 export const getGroup = async () => {
   return mockGroup;
 };
 
-// export const getCommentAPI = async (id) => {
-//   return mockComments(id);
-// };
 export const getPostDetailAPI = async (userId) => {
   const postdetail = mockPost.find((p) => p.id === Number(userId));
   //Tại sao cần chuyển đổi postId thành số?:

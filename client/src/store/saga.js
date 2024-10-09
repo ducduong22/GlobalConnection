@@ -1,14 +1,14 @@
 import { all } from "redux-saga/effects";
-import postSaga from "../container/post/postSaga";
-import commentSaga from "../container/comment/commentSaga";
-import postDetailSaga from "../container/post/postDetailSaga";
-import userSaga from "../container/Login/userSaga";
-import userIdSaga from "../container/post/userIdSaga";
-import groupSaga from "../container/groups/groupSaga";
-import printingSaga from "../container/menu/ThreePrintingSaga";
-import programmingSaga from "../container/menu/ProgrammingSaga";
-import technewSaga from "../container/menu/TechnewsSaga";
-import artificialSaga from "../container/menu/ArtificialSaga";
+import postSaga from "../store/post/postSaga";
+import commentSaga from "../store/comment/commentSaga";
+import postDetailSaga from "../store/post/postDetailSaga";
+import userSaga from "./login/userSaga";
+import userIdSaga from "../store/post/userIdSaga";
+import groupSaga from "../store/groups/groupSaga";
+import printingSaga from "../store/menu/ThreePrintingSaga";
+import programmingSaga from "../store/menu/ProgrammingSaga";
+import technewSaga from "../store/menu/TechnewsSaga";
+import artificialSaga from "../store/menu/ArtificialSaga";
 
 function* rootSaga() {
   yield all([
@@ -22,7 +22,6 @@ function* rootSaga() {
     programmingSaga(),
     technewSaga(),
     artificialSaga(),
-    // Add other sagas here
   ]);
 }
 

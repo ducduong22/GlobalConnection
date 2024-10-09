@@ -91,10 +91,7 @@ const ArtificialIntelligence = () => {
 
                     <div className="like_icon">
                       <i className="fa-solid fa-message text-white"></i>
-                      <button
-                        className="bg-transparent text-white"
-                        // onClick={() => handleCommentClick(tech.id)}
-                      >
+                      <button className="bg-transparent text-white">
                         Comments
                       </button>
                     </div>
@@ -106,46 +103,6 @@ const ArtificialIntelligence = () => {
                   </div>
                   <hr />
 
-                  {/*---------------------------------------------------------------------------*/}
-                  {/* {activePostId === post.id && (
-                    <div className="comments-section">
-                      {mockComments
-                        .filter((comment) => comment.postId === post.id)
-                        .map((comment) => (
-                          <div className="row" key={comment.id}>
-                            <div className="col-auto ms-3 mt-2">
-                              <img
-                                className="rounded-circle"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_nLCu85ayoTKwYw6alnvrockq5QBT2ZWR2g&usqp=CAU"
-                                style={{ height: "38px", width: "43px" }}
-                              ></img>
-                            </div>
-                            <div className="col-10 mt-2 bg-secondary rounded-4">
-                              <div className="mb-1 text-capitalize fs-6 text-white ">
-                                {comment.name}
-                              </div>
-                              <div className="text-white ">{comment.body}</div>
-                            </div>
-                            <div className="d-flex flex-row mb-3 comment_reply ">
-                              <button className="bg-transparent p-2">
-                                <HeartFilled
-                                  onClick={() => handleLikeClick(comment.id)}
-                                  style={{
-                                    color: likeStatus[comment.id]
-                                      ? "red"
-                                      : "white",
-                                    fontSize: "24px",
-                                  }}
-                                />
-                              </button>
-                              <button className="bg-transparent mt-1 text-dark mb-2 text-white p-2 ml-0">
-                                Reply to
-                              </button>
-                            </div>
-                          </div>
-                        ))} */}
-                  {/* </div>
-                  )} */}
                   <hr />
                   {/*---------------------------------------------------------------------------*/}
                   <div className="comment_warpper">

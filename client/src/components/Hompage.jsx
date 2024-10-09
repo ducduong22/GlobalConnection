@@ -6,16 +6,15 @@ import { SearchOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { setUserId } from "../container/post/userIdSlice";
 import { setGroup } from "../container/groups/groupSlice";
-import ThreeDPrinting from "./menu3DPrinting";
-import Arificial from "./menuArtificial";
-import Programming from "./menuProgamimng";
-import TechNews from "./menuTechNews";
+import ThreeDPrinting from "./Menu3DPrinting";
+import Arificial from "./MenuArtificial";
+import Programming from "./MenuProgamimng";
+import TechNews from "./MenuTechNews";
 import Post from "./Post";
 import ChatBox from "./ChatBox";
 import ChatBoxList from "./ChatBoxList";
 import axios from "axios";
 import "../assets/stylesheets/css/Chatbox.css";
-// import { Link } from "react-router-dom";s
 
 const HomePage = () => {
   const [contacts, setContacts] = useState([]);
@@ -57,15 +56,15 @@ const HomePage = () => {
   };
 
   const handleSuggestionClick = (text) => {
-    setInput(text); // Cập nhật giá trị thanh tìm kiếm
-    dispatch(setSearch(text)); // Cập nhật giá trị tìm kiếm trong Redux (nếu cần)
-    setFilteredPosts([]); // Đóng danh sách gợi ý
+    setInput(text);
+    dispatch(setSearch(text));
+    setFilteredPosts([]);
   };
 
   const handleClearInput = () => {
-    setInput(""); // Xóa nội dung thanh tìm kiếm
-    setFilteredPosts([]); // Xóa danh sách gợi ý
-    dispatch(setSearch("")); // Cập nhật giá trị tìm kiếm trong Redux (nếu cần)
+    setInput("");
+    setFilteredPosts([]);
+    dispatch(setSearch(""));
   };
   const handleMenuClick = (menu) => {
     setOpenMenu(openMenu === menu ? null : menu);
@@ -122,8 +121,8 @@ const HomePage = () => {
     const fetchContacts = async () => {
       try {
         const response = await axios.get("http://localhost:3002/users");
-        console.log("Contacts fetched from server:", response.data); // Log contacts to console
-        // Lọc bỏ người dùng đang đăng nhập khỏi danh sách liên hệ
+        console.log("Contacts fetched from server:", response.data);
+
         const filteredContacts = response.data.filter(
           (u) => u._id !== user._id
         );
@@ -136,15 +135,13 @@ const HomePage = () => {
     fetchContacts();
   }, []);
   const handleContactClick = (contactId) => {
-    // Kiểm tra xem contactId đã có trong activeChats chưa
     const chatExists = activeChats.some((chat) => chat.id === contactId);
 
-    // Nếu không có, kiểm tra số lượng chat hiện tại
     if (!chatExists) {
       if (activeChats.length >= 3) {
-        setActiveChats((prevChats) => prevChats.slice(1)); // Xóa chat cũ nhất
+        setActiveChats((prevChats) => prevChats.slice(1));
       }
-      setActiveChats((prevChats) => [...prevChats, { id: contactId }]); // Thêm chat mới
+      setActiveChats((prevChats) => [...prevChats, { id: contactId }]);
     }
   };
 
@@ -160,8 +157,6 @@ const HomePage = () => {
   const handleProfileClick = (userId) => {
     navigate(`/profile-page/${user.name}/${userId}`);
   };
-
-  // console.log("contacts", user._id);
 
   return (
     <div>
@@ -225,7 +220,6 @@ const HomePage = () => {
 
           <div
             onClick={() => handleProfileClick(user.userId)}
-            // to="/profile-page"
             className="Img text-decoration-none"
           >
             <img src={user.avatar} />

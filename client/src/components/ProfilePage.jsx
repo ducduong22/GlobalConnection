@@ -1,4 +1,3 @@
-// import React from "react";
 import "../assets/stylesheets/css/ProfilePage.css";
 import Header from "./Header";
 import { useEffect, useState } from "react";
@@ -15,10 +14,9 @@ import {
 } from "date-fns";
 import { enUS } from "date-fns/locale";
 
-// import Post from "./Post";
 const ProfilePage = () => {
   const user = useSelector((state) => state.user.user);
-  const { userId } = useParams(); // Lấy userId từ URL params
+  const { userId } = useParams();
   const dispatch = useDispatch();
   const [activePostId, setActivePostId] = useState(null);
   const posts = useSelector((state) => state.post.posts);
@@ -58,7 +56,7 @@ const ProfilePage = () => {
     }));
   };
   useEffect(() => {
-    dispatch(setPosts()); // Dispatch action để bắt đầu quá trình tải dữ liệu
+    dispatch(setPosts());
   }, [dispatch]);
 
   const userPosts = posts.filter((post) => post.userId === user._id);
@@ -71,10 +69,10 @@ const ProfilePage = () => {
         addSuffix: true,
         locale: enUS,
       });
-      // Remove the word "about" from the distance string
+
       return distanceString.replace(/^about\s/, "");
     } else {
-      return format(postDate, "dd/MM/yyyy", { locale: enUS }); // "14:30 15/08/2024"
+      return format(postDate, "dd/MM/yyyy", { locale: enUS });
     }
   };
 

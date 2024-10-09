@@ -39,7 +39,6 @@ export const ForgotPasswordPage = () => {
                 className="find-accout border border-dark"
                 name="email"
                 placeholder="Email or mobile number"
-                // aria-label="Email or mobile number"
               ></input>
             </div>
             <div className="Fw-button d-flex flex-row-reverse border-top">

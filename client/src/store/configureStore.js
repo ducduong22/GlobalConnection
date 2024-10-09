@@ -17,7 +17,6 @@ import rootSaga from "./saga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-// Persist configuration
 const persistConfig = {
   key: "root",
   storage,
@@ -34,14 +33,10 @@ const persistConfig = {
     "technew",
     "uesrId",
   ],
-  // Bạn có thể thêm bất kỳ cấu hình redux-persist nào khác tại đây.
-  // Ví dụ: bạn có thể muốn thêm `danh sách trắng` hoặc `danh sách đen` để duy trì có chọn lọc các phần của trạng thái.
 };
 
-// Create a persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Configure the store
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -50,10 +45,8 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(sagaMiddleware),
-  // Add any middleware or enhancers here
 });
 
 sagaMiddleware.run(rootSaga);
 
-// Create a persistor instance
 export const persistor = persistStore(store);

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/stylesheets/css/Login.css";
 import logo from "../assets/image/logoWeb.png";
 import { useDispatch } from "react-redux";
-import { loginRequest } from "../container/Login/userSlice";
+import { loginRequest } from "../store/login/userSlice";
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const LoginPage = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     dispatch(loginRequest({ email, password }));
-    navigate("/homepage"); // Điều hướng sau khi đăng nhập thành công
+    navigate("/homepage");
   };
 
   return (

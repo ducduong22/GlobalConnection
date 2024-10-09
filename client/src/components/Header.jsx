@@ -14,13 +14,12 @@ const Title = () => {
   const user = useSelector((state) => state.user.user);
   const [contacts, setContacts] = useState([]);
   const [activeChats, setActiveChats] = useState([]);
-  // Đóng cả 2 modal
+
   const closeBothModals = () => {
     setshowSetting(false);
     setshowChatList(false);
   };
 
-  // Đóng modal khi click ra ngoài modal
   const handleOutsideClick = (event) => {
     if (Setting.current && !Setting.current.contains(event.target)) {
       setshowSetting(false);
@@ -30,7 +29,6 @@ const Title = () => {
     }
   };
 
-  // Đóng modal khi cuộn chuột
   const handleScroll = () => {
     closeBothModals();
   };
@@ -51,8 +49,7 @@ const Title = () => {
     const fetchContacts = async () => {
       try {
         const response = await axios.get("http://localhost:3002/users");
-        console.log("Contacts fetched from server:", response.data); // Log contacts to console
-        // Lọc bỏ người dùng đang đăng nhập khỏi danh sách liên hệ
+        console.log("Contacts fetched from server:", response.data);
         const filteredContacts = response.data.filter(
           (u) => u._id !== user._id
         );
@@ -65,15 +62,12 @@ const Title = () => {
     fetchContacts();
   }, []);
   const handleContactClick = (contactId) => {
-    // Kiểm tra xem contactId đã có trong activeChats chưa
     const chatExists = activeChats.some((chat) => chat.id === contactId);
-
-    // Nếu không có, kiểm tra số lượng chat hiện tại
     if (!chatExists) {
       if (activeChats.length >= 3) {
-        setActiveChats((prevChats) => prevChats.slice(1)); // Xóa chat cũ nhất
+        setActiveChats((prevChats) => prevChats.slice(1));
       }
-      setActiveChats((prevChats) => [...prevChats, { id: contactId }]); // Thêm chat mới
+      setActiveChats((prevChats) => [...prevChats, { id: contactId }]);
     }
   };
   return (
@@ -91,16 +85,15 @@ const Title = () => {
           <i
             className="fa-regular fa-message text-white"
             onClick={() => {
-              setshowChatList(!showChatList); // Toggle trạng thái modal 2
-              setshowSetting(false); // Đảm bảo modal 1 đóng
+              setshowChatList(!showChatList);
+              setshowSetting(false);
             }}
           ></i>
-          {/* <i className="fa-solid ms-3 me-3 fa-moon"></i> */}
           <img
             src={user.avatar}
             onClick={() => {
-              setshowSetting(!showSetting); // Toggle trạng thái modal 1
-              setshowChatList(false); // Đảm bảo modal 2 đóng
+              setshowSetting(!showSetting);
+              setshowChatList(false);
             }}
           />
         </div>

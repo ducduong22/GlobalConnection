@@ -7,12 +7,15 @@ import { HeartFilled } from "@ant-design/icons";
 import { mockComments } from "../store/mocks";
 import { setPosts } from "../container/post/postSlice";
 const PostDetail = () => {
-  const { userId } = useParams(); // Lấy userId từ URL params
+  const { userId } = useParams();
   const dispatch = useDispatch();
   const [activePostId, setActivePostId] = useState(null);
   const getUserIds = useSelector((state) => state.userId.userID);
   const user = useSelector((state) => state.user.user);
   const posts = useSelector((state) => state.post.posts);
+  const userPosts = posts.filter((post) => post.userId === parseInt(userId));
+  const getUserId = getUserIds.filter((u) => u.userId === parseInt(userId));
+  const [showFriends, setShowFriends] = useState(false);
   const [likedPosts, setLikedPosts] = useState({});
   const [likeStatus, setLikeStatus] = useState(
     posts.reduce((acc, post) => ({ ...acc, [post.id]: post.handlelike }), {})
@@ -51,15 +54,10 @@ const PostDetail = () => {
   };
 
   useEffect(() => {
-    dispatch(setPosts()); // Dispatch action để bắt đầu quá trình tải dữ liệu
+    dispatch(setPosts());
     dispatch(setUserId());
   }, [dispatch]);
 
-  // Lọc các bài viết theo userId
-  const userPosts = posts.filter((post) => post.userId === parseInt(userId));
-  const getUserId = getUserIds.filter((u) => u.userId === parseInt(userId));
-
-  const [showFriends, setShowFriends] = useState(false);
   const toggleFriends = () => {
     setShowFriends(!showFriends);
   };
@@ -75,12 +73,9 @@ const PostDetail = () => {
       return updatedAdd;
     });
   };
-
-  console.log("so ID", userId);
-  console.log(getUserId);
   return (
     <>
-      <Header />{" "}
+      <Header />
       {getUserId.map((userid) => (
         <div key={userid.id} className="main_profile ">
           <div className="Left ">

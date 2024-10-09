@@ -4,10 +4,9 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerRequest } from "../container/Login/userSlice";
+import { registerRequest } from "../store/login/userSlice";
 import logo from "../assets/image/logoWeb.png";
 import { Link } from "react-router-dom";
-// import axios from "axios"; // Đảm bảo đã cài đặt axios
 
 const CreateAccount = () => {
   const [name, setName] = useState("");
@@ -22,9 +21,9 @@ const CreateAccount = () => {
     e.preventDefault();
     if (password === confirmPassword) {
       dispatch(registerRequest({ name, email, password }));
-      navigate("/login"); // Điều hướng sau khi đăng ký thành công
+      navigate("/login");
     } else {
-      alert("Passwords do not match"); // Hiển thị thông báo lỗi nếu mật khẩu không khớp
+      alert("Passwords do not match");
     }
   };
 

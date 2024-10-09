@@ -33,28 +33,6 @@ io.on("connection", (socket) => {
 
     io.emit("receiveMessage", newMessage);
   });
-
-  // socket.on("disconnect", () => {
-  //   console.log("User disconnected");
-  // });
-});
-
-// File: server.js or app.js
-app.post("/messages", async (req, res) => {
-  const { senderId, receiverId, content } = req.body;
-
-  if (!senderId || !receiverId || !content) {
-    return res.status(400).json({ error: "Missing required fields" });
-  }
-
-  try {
-    const newMessage = new Message({ senderId, receiverId, content });
-    await newMessage.save();
-    io.emit("receiveMessage", newMessage);
-    res.status(201).json(newMessage);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
 });
 
 app.post("/messages", async (req, res) => {
@@ -74,25 +52,37 @@ app.post("/messages", async (req, res) => {
   }
 });
 
-// Route lấy tin nhắn giữa hai người dùng
+app.post("/messages", async (req, res) => {
+  const { senderId, receiverId, content } = req.body;
+
+  if (!senderId || !receiverId || !content) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  try {
+    const newMessage = new Message({ senderId, receiverId, content });
+    await newMessage.save();
+    io.emit("receiveMessage", newMessage);
+    res.status(201).json(newMessage);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.get("/messages", async (req, res) => {
   const { senderId, receiverId } = req.query;
 
-  // Validate that both senderId and receiverId are provided
   if (!senderId || !receiverId) {
     return res.status(400).json({ error: "Missing senderId or receiverId" });
   }
 
   try {
-    // Find messages where sender and receiver match the given IDs
     const messages = await Message.find({
       $or: [
         { senderId, receiverId },
-        { senderId: receiverId, receiverId: senderId }, // Match both directions
+        { senderId: receiverId, receiverId: senderId },
       ],
-    }).sort({ createdAt: 1 }); // Optionally sort by creation time (ascending)
-
-    // Return the messages in the response
+    }).sort({ createdAt: 1 });
     res.status(200).json(messages);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -120,7 +110,6 @@ app.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Incorrect password" });
     }
 
-    // Tạo token đăng nhập (hoặc trả về thông tin người dùng)
     res.json({ token: "user-token", user });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -129,8 +118,8 @@ app.post("/login", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   try {
-    const users = await User.find({}, { password: 0 }); // Exclude password field
-    console.log("Users fetched from DB:", users); // Log users to console
+    const users = await User.find({}, { password: 0 });
+    console.log("Users fetched from DB:", users);
     res.json(users);
   } catch (err) {
     res.status(500).json({ error: err.message });

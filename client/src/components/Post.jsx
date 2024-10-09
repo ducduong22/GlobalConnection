@@ -31,10 +31,11 @@ const Post = () => {
   const posts = useSelector((state) => state.post.posts);
   const search = useSelector((state) => state.search.search);
   const comments = useSelector((state) => state.comment.comments);
-  const [deleteModalVisible, setDeleteModalVisible] = useState(false); // State to control modal visibility
-  const [selectedCommentId, setSelectedCommentId] = useState(null); // State to hold the comment ID for deletion
+  const [deleteModalVisible, setDeleteModalVisible] = useState(false);
+  const [selectedCommentId, setSelectedCommentId] = useState(null);
+  deletion;
 
-  const deleteModalRef = useRef(); // Ref for the modal
+  const deleteModalRef = useRef();
   const [newComment, setNewComment] = useState({
     body: "",
     postId: null,
@@ -70,10 +71,10 @@ const Post = () => {
         addSuffix: true,
         locale: enUS,
       });
-      // Remove the word "about" from the distance string
+
       return distanceString.replace(/^about\s/, "");
     } else {
-      return format(postDate, "dd/MM/yyyy", { locale: enUS }); // "14:30 15/08/2024"
+      return format(postDate, "dd/MM/yyyy", { locale: enUS });
     }
   };
 
@@ -85,22 +86,22 @@ const Post = () => {
         name: user.name,
         body: newComment.body,
         like: 0,
-        id: Math.floor(Math.random() * 10), // Ensure unique ID generation
+        id: Math.floor(Math.random() * 10),
       };
 
-      dispatch(addCommentRequest(commentToSubmit)); // Dispatch action to add comment
-      setNewComment({ ...newComment, body: "", postId: null }); // Reset comment input field
+      dispatch(addCommentRequest(commentToSubmit));
+      setNewComment({ ...newComment, body: "", postId: null });
     }
   };
   const openDeleteModal = (commentId) => {
     setSelectedCommentId(commentId);
-    setDeleteModalVisible(true); // Show first modal with delete option
+    setDeleteModalVisible(true);
   };
 
   const handleRemoveComment = () => {
-    dispatch(deleteCommentRequest(selectedCommentId)); // Dispatch action to remove comment
-    setDeleteModalVisible(false); // Close modal after delete
-    setSelectedCommentId(null); // Clear selected comment ID
+    dispatch(deleteCommentRequest(selectedCommentId));
+    setDeleteModalVisible(false);
+    setSelectedCommentId(null);
   };
 
   useEffect(() => {
@@ -109,14 +110,14 @@ const Post = () => {
         deleteModalRef.current &&
         !deleteModalRef.current.contains(event.target)
       ) {
-        setDeleteModalVisible(false); // Close modal on outside click
-        setSelectedCommentId(null); // Clear selected comment ID
+        setDeleteModalVisible(false);
+        setSelectedCommentId(null);
       }
     };
 
     const handleScroll = () => {
-      setDeleteModalVisible(false); // Close modal on scroll
-      setSelectedCommentId(null); // Clear selected comment ID
+      setDeleteModalVisible(false);
+      setSelectedCommentId(null);
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
@@ -360,7 +361,7 @@ const Post = () => {
                             body: e.target.value,
                             postId: post.id,
                           })
-                        } // Update both body and postId
+                        }
                       />
 
                       <button
